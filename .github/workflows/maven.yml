@@ -29,5 +29,3 @@ jobs:
       with: 
           # Artifact name
         name: MelhorEscrita # optional, default is artifact
-          # A file, directory or wildcard pattern that describes what to upload
-        path: /
