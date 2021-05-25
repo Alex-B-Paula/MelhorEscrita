@@ -25,6 +25,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Automatic Releases
-      uses: marvinpinto/action-automatic-releases@v1.2.0
-        repo_token:"one"
+      uses: marvinpinto/action-automatic-releases@lastest
+      with: 
+        repo_token: "one"
 
