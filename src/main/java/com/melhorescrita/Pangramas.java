@@ -11,16 +11,16 @@ package com.mycompany.melhorescrita;
 public class Pangramas {
     //Vetor de pangramas.
     String[] pan = new String[10];{
-    pan[0] = "Um pequeno jabuti xereta viu dez cegonhas felizes.";
-    pan[1] = "Blitz prende ex-vesgo com cheque fajuto.";
+    pan[0] = "Um pequeno jabuti xereta viu dez cegonhas felizes";
+    pan[1] = "Blitz prende ex-vesgo com cheque fajuto";
     pan[2] = "Jovem craque belga prediz falhas no xote.";
-    pan[3] = "Gazeta publica hoje no jornal breve nota de faxina na quermesse.";
-    pan[4] = "À noite, vovô Kowalsky vê o ímã cair no pé do pingüim queixoso e vovó põe açúcar no chá de tâmaras do jabuti feliz.";
-    pan[5] = "Sphinx of black quartz, judge my vow.";
-    pan[6] = "Glib jocks quiz nymph to vex dwarf.";
-    pan[7] = "Quick zephyrs blow, vexing daft Jim.";
-    pan[8] = "Two driven jocks help fax my big quiz.";
-    pan[9] = "Sympathizing would fix Quaker objectives.";
+    pan[3] = "Gazeta publica hoje no jornal breve nota de faxina na quermesse";
+    pan[4] = "À noite, vovô Kowalsky vê o ímã cair no pé do pingüim queixoso e vovó põe açúcar no chá de tâmaras do jabuti feliz";
+    pan[5] = "Sphinx of black quartz, judge my vow";
+    pan[6] = "Glib jocks quiz nymph to vex dwarf";
+    pan[7] = "Quick zephyrs blow, vexing daft Jim";
+    pan[8] = "Two driven jocks help fax my big quiz";
+    pan[9] = "Sympathizing would fix Quaker objectives";
 }
     //Método de Get para pangramas específicos
     public String GetPangrama(int num){

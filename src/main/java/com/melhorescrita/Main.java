@@ -29,8 +29,6 @@ public class Main extends javax.swing.JFrame {
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         //Codigo Customizado para definir o pangrama atual
         jLabelPangrama = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPangrama = new javax.swing.JTextArea();
         jLabelResultado = new javax.swing.JLabel();
         //Modificação do código para contador de pontuação
         jLabelPontuacao = new javax.swing.JLabel();
@@ -85,6 +83,7 @@ public class Main extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButtonE = new javax.swing.JButton();
         jButtonO = new javax.swing.JButton();
+        jTextFieldPangrama = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 500));
@@ -94,18 +93,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabelPangrama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPangrama.setText(Pan.GetPangrama(numAtual));
-
-        jTextPangrama.setColumns(20);
-        jTextPangrama.setRows(5);
-        jTextPangrama.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextPangramaKeyPressed(evt);
-            }
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextPangramaKeyReleased(evt);
-            }
-        });
-        jScrollPane2.setViewportView(jTextPangrama);
 
         jLabelResultado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -446,412 +433,304 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButtonRight))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton0, jButton1, jButton2, jButton3, jButton4, jButton5, jButton6, jButton7, jButton8, jButton9, jButtonA, jButtonAccent, jButtonB, jButtonC, jButtonClose, jButtonComma, jButtonD, jButtonE, jButtonEquals, jButtonF, jButtonG, jButtonH, jButtonI, jButtonJ, jButtonK, jButtonL, jButtonM, jButtonMinus, jButtonN, jButtonO, jButtonOpen, jButtonP, jButtonPeriod, jButtonQ, jButtonR, jButtonRight, jButtonS, jButtonSemi, jButtonT, jButtonTil, jButtonU, jButtonV, jButtonW, jButtonX, jButtonY, jButtonZ, jButtonÇ});
 
         jButtonQ.getAccessibleContext().setAccessibleDescription("");
 
+        jTextFieldPangrama.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPangramaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldPangramaKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(761, 761, 761)
-                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabelPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabelPangrama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabelPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46))))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelPangrama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextFieldPangrama))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelPangrama, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelPontuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelPangrama, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextFieldPangrama, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelResultado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPontuacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(40, 40, 40)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * Evento que retorna as teclas do teclado que estavam pressionadas e foram
-     * liberadas. Cada decisão abaixo representa uma letra do teclado que quando
-     * liberada retorna seu respectivo jButton a seu estado original.
-     */
-    private void jTextPangramaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextPangramaKeyReleased
-        
+    private void jTextFieldPangramaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPangramaKeyPressed
+        switch (evt.getKeyCode()) {
+            case 49 ->
+                jButton1.setBackground(Color.WHITE);
+            case 50 ->
+                jButton2.setBackground(Color.WHITE);
+            case 51 ->
+                jButton3.setBackground(Color.WHITE);
+            case 52 ->
+                jButton4.setBackground(Color.WHITE);
+            case 53 ->
+                jButton5.setBackground(Color.WHITE);
+            case 54 ->
+                jButton6.setBackground(Color.WHITE);
+            case 55 ->
+                jButton7.setBackground(Color.WHITE);
+            case 56 ->
+                jButton8.setBackground(Color.WHITE);
+            case 57 ->
+                jButton9.setBackground(Color.WHITE);
+            case 48 ->
+                jButton0.setBackground(Color.WHITE);
+            case KeyEvent.VK_MINUS ->
+                jButtonMinus.setBackground(Color.WHITE);
+            case KeyEvent.VK_EQUALS ->
+                jButtonEquals.setBackground(Color.WHITE);
+            case 81 ->
+                jButtonQ.setBackground(Color.WHITE);
+            case 87 ->
+                jButtonW.setBackground(Color.WHITE);
+            case 69 ->
+                jButtonE.setBackground(Color.WHITE);
+            case 82 ->
+                jButtonR.setBackground(Color.WHITE);
+            case 84 ->
+                jButtonT.setBackground(Color.WHITE);
+            case 89 ->
+                jButtonY.setBackground(Color.WHITE);
+            case 85 ->
+                jButtonU.setBackground(Color.WHITE);
+            case 73 ->
+                jButtonI.setBackground(Color.WHITE);
+            case 79 ->
+                jButtonO.setBackground(Color.WHITE);
+            case 80 ->
+                jButtonP.setBackground(Color.WHITE);
+            case KeyEvent.VK_DEAD_ACUTE ->
+                jButtonAccent.setBackground(Color.WHITE);
+            case KeyEvent.VK_OPEN_BRACKET ->
+                jButtonOpen.setBackground(Color.WHITE);
+            case 65 ->
+                jButtonA.setBackground(Color.WHITE);
+            case 83 ->
+                jButtonS.setBackground(Color.WHITE);
+            case 68 ->
+                jButtonD.setBackground(Color.WHITE);
+            case 70 ->
+                jButtonF.setBackground(Color.WHITE);
+            case 71 ->
+                jButtonG.setBackground(Color.WHITE);
+            case 72 ->
+                jButtonH.setBackground(Color.WHITE);
+            case 74 ->
+                jButtonJ.setBackground(Color.WHITE);
+            case 75 ->
+                jButtonK.setBackground(Color.WHITE);
+            case 76 ->
+                jButtonL.setBackground(Color.WHITE);
+            case KeyEvent.VK_DEAD_TILDE ->
+                jButtonTil.setBackground(Color.WHITE);
+            case KeyEvent.VK_CLOSE_BRACKET ->
+                jButtonClose.setBackground(Color.WHITE);
+            case 90 ->
+                jButtonZ.setBackground(Color.WHITE);
+            case 88 ->
+                jButtonX.setBackground(Color.WHITE);
+            case 67 ->
+                jButtonC.setBackground(Color.WHITE);
+            case 86 ->
+                jButtonV.setBackground(Color.WHITE);
+            case 66 ->
+                jButtonB.setBackground(Color.WHITE);
+            case 78 ->
+                jButtonN.setBackground(Color.WHITE);
+            case 77 ->
+                jButtonM.setBackground(Color.WHITE);
+            case KeyEvent.VK_COMMA ->
+                jButtonComma.setBackground(Color.WHITE);
+            case KeyEvent.VK_PERIOD ->
+                jButtonPeriod.setBackground(Color.WHITE);
+            case KeyEvent.VK_SEMICOLON ->
+                jButtonSemi.setBackground(Color.WHITE);
+            case KeyEvent.VK_BACK_SPACE ->
+                jButtonBack.setBackground(Color.WHITE);
+            case KeyEvent.VK_SPACE ->
+                jButtonSpace.setBackground(Color.WHITE);
 
-        
-        if (evt.getKeyCode() == 49) {
-            jButton1.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 50) {
-            jButton2.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 51) {
-            jButton3.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 52) {
-            jButton4.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 53) {
-            jButton5.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 54) {
-            jButton6.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 55) {
-            jButton7.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 56) {
-            jButton8.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 57) {
-            jButton9.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 48) {
-            jButton0.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_MINUS) {
-            jButtonMinus.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_EQUALS) {
-            jButtonEquals.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 81) {
-            jButtonQ.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 87) {
-            jButtonW.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 69) {
-            jButtonE.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 82) {
-            jButtonR.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 84) {
-            jButtonT.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 89) {
-            jButtonY.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 85) {
-            jButtonU.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 73) {
-            jButtonI.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 79) {
-            jButtonO.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 80) {
-            jButtonP.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_DEAD_ACUTE) {
-            jButtonAccent.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_OPEN_BRACKET) {
-            jButtonOpen.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 65) {
-            jButtonA.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 83) {
-            jButtonS.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 68) {
-            jButtonD.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 70) {
-            jButtonF.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 71) {
-            jButtonG.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 72) {
-            jButtonH.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 74) {
-            jButtonJ.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 75) {
-            jButtonK.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 76) {
-            jButtonL.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyChar() == 'ç') {
-            jButtonÇ.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_DEAD_TILDE) {
-            jButtonTil.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_CLOSE_BRACKET) {
-            jButtonClose.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 90) {
-            jButtonZ.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 88) {
-            jButtonX.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 67) {
-            jButtonC.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 86) {
-            jButtonV.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 66) {
-            jButtonB.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 78) {
-            jButtonN.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == 77) {
-            jButtonM.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_COMMA) {
-            jButtonComma.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_PERIOD) {
-            jButtonPeriod.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_SEMICOLON) {
-            jButtonSemi.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyChar() == '/') {
-            jButtonRight.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-            jButtonBack.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
-            jButtonSpace.setBackground(Color.LIGHT_GRAY);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            jButtonEnter.setBackground(Color.LIGHT_GRAY);
+            // Junto com o mudança de cor, pressionar a tecla Enter verifica se o pangrama está correto e retorna o resultado
+            case KeyEvent.VK_ENTER -> {
+                jButtonEnter.setBackground(Color.WHITE);
+
+                Verificador Veri = new Verificador();
+                boolean Resultado;
+                // O texto digitado pelo usuário é enviada para classe Verificador para comparar com o pangrama.
+                Resultado = Veri.Verificar(numAtual, jTextFieldPangrama.getText());
+                // Um novo pangrama é retirado da classe Pangrama e colocado no programa.
+                numAtual = numAtual + 1;
+                jLabelPangrama.setText(Pan.GetPangrama(numAtual));
+                jTextFieldPangrama.setText(null);
+
+                //A resultado do Verificado é apresentado para o usuário e a pontuação sobe caso seja necessário
+                if (Resultado == true) {
+                    Pontuacao = Pontuacao + 1;
+                    jLabelPontuacao.setText("Pontuação: " + String.valueOf(Pontuacao));
+                    jLabelResultado.setText("Correto!");
+                } else {
+                    jLabelResultado.setText("Errado!");
+                }
+            }
+
         }
 
-        
-    }//GEN-LAST:event_jTextPangramaKeyReleased
-
-    /**
-     * Evento que retorna as teclas que foram presionadas. Cada decisão abaixo
-     * representa uma letra do teclado que, quando pressionada, muda sua cor de
-     * fundo.
-     */
-    private void jTextPangramaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextPangramaKeyPressed
-
-
-        
-        if (evt.getKeyCode() == 49) {
-            jButton1.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 50) {
-            jButton2.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 51) {
-            jButton3.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 52) {
-            jButton4.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 53) {
-            jButton5.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 54) {
-            jButton6.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 55) {
-            jButton7.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 56) {
-            jButton8.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 57) {
-            jButton9.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 48) {
-            jButton0.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_MINUS) {
-            jButtonMinus.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_EQUALS) {
-            jButtonEquals.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 81) {
-            jButtonQ.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 87) {
-            jButtonW.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 69) {
-            jButtonE.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 82) {
-            jButtonR.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 84) {
-            jButtonT.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 89) {
-            jButtonY.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 85) {
-            jButtonU.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 73) {
-            jButtonI.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 79) {
-            jButtonO.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 80) {
-            jButtonP.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_DEAD_ACUTE) {
-            jButtonAccent.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_OPEN_BRACKET) {
-            jButtonOpen.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 65) {
-            jButtonA.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 83) {
-            jButtonS.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 68) {
-            jButtonD.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 70) {
-            jButtonF.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 71) {
-            jButtonG.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 72) {
-            jButtonH.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 74) {
-            jButtonJ.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 75) {
-            jButtonK.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 76) {
-            jButtonL.setBackground(Color.WHITE);
-        }
         if (evt.getKeyChar() == 'ç') {
             jButtonÇ.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_DEAD_TILDE) {
-            jButtonTil.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_CLOSE_BRACKET) {
-            jButtonClose.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 90) {
-            jButtonZ.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 88) {
-            jButtonX.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 67) {
-            jButtonC.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 86) {
-            jButtonV.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 66) {
-            jButtonB.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 78) {
-            jButtonN.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == 77) {
-            jButtonM.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_COMMA) {
-            jButtonComma.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_PERIOD) {
-            jButtonPeriod.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_SEMICOLON) {
-            jButtonSemi.setBackground(Color.WHITE);
         }
         if (evt.getKeyChar() == '/') {
             jButtonRight.setBackground(Color.WHITE);
         }
-        if (evt.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-            jButtonBack.setBackground(Color.WHITE);
-        }
-        if (evt.getKeyCode() == KeyEvent.VK_SPACE) {
-            jButtonSpace.setBackground(Color.WHITE);
-        }
-        
-        // Junto com o mudança de cor, pressionar a tecla Enter verifica se o pangrama está correto e retorna o resultado
-        
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            jButtonEnter.setBackground(Color.WHITE);
+    }//GEN-LAST:event_jTextFieldPangramaKeyPressed
 
-            Verificador Veri = new Verificador();
-            boolean Resultado;
-            // O texto digitado pelo usuário é enviada para classe Verificador para comparar com o pangrama.
-            Resultado = Veri.Verificar(numAtual, jTextPangrama.getText());
-            // Um novo pangrama é retirado da classe Pangrama e colocado no programa.
-            numAtual = numAtual + 1;
-            jLabelPangrama.setText(Pan.GetPangrama(numAtual));
-            jTextPangrama.setText("");
-            
-            //A resultado do Verificado é apresentado para o usuário e a pontuação sobe caso seja necessário
-            if (Resultado == true) {
-                Pontuacao = Pontuacao + 1;
-                jLabelPontuacao.setText("Pontuação: " + String.valueOf(Pontuacao));
-                jLabelResultado.setText("Correto!");
-            } else {
-                jLabelResultado.setText("Errado!");
-            }
+    private void jTextFieldPangramaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPangramaKeyReleased
+        switch (evt.getKeyCode()) {
+            case 49 ->
+                jButton1.setBackground(Color.LIGHT_GRAY);
+            case 50 ->
+                jButton2.setBackground(Color.LIGHT_GRAY);
+            case 51 ->
+                jButton3.setBackground(Color.LIGHT_GRAY);
+            case 52 ->
+                jButton4.setBackground(Color.LIGHT_GRAY);
+            case 53 ->
+                jButton5.setBackground(Color.LIGHT_GRAY);
+            case 54 ->
+                jButton6.setBackground(Color.LIGHT_GRAY);
+            case 55 ->
+                jButton7.setBackground(Color.LIGHT_GRAY);
+            case 56 ->
+                jButton8.setBackground(Color.LIGHT_GRAY);
+            case 57 ->
+                jButton9.setBackground(Color.LIGHT_GRAY);
+            case 48 ->
+                jButton0.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_MINUS ->
+                jButtonMinus.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_EQUALS ->
+                jButtonEquals.setBackground(Color.LIGHT_GRAY);
+            case 81 ->
+                jButtonQ.setBackground(Color.LIGHT_GRAY);
+            case 87 ->
+                jButtonW.setBackground(Color.LIGHT_GRAY);
+            case 69 ->
+                jButtonE.setBackground(Color.LIGHT_GRAY);
+            case 82 ->
+                jButtonR.setBackground(Color.LIGHT_GRAY);
+            case 84 ->
+                jButtonT.setBackground(Color.LIGHT_GRAY);
+            case 89 ->
+                jButtonY.setBackground(Color.LIGHT_GRAY);
+            case 85 ->
+                jButtonU.setBackground(Color.LIGHT_GRAY);
+            case 73 ->
+                jButtonI.setBackground(Color.LIGHT_GRAY);
+            case 79 ->
+                jButtonO.setBackground(Color.LIGHT_GRAY);
+            case 80 ->
+                jButtonP.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_DEAD_ACUTE ->
+                jButtonAccent.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_OPEN_BRACKET ->
+                jButtonOpen.setBackground(Color.LIGHT_GRAY);
+            case 65 ->
+                jButtonA.setBackground(Color.LIGHT_GRAY);
+            case 83 ->
+                jButtonS.setBackground(Color.LIGHT_GRAY);
+            case 68 ->
+                jButtonD.setBackground(Color.LIGHT_GRAY);
+            case 70 ->
+                jButtonF.setBackground(Color.LIGHT_GRAY);
+            case 71 ->
+                jButtonG.setBackground(Color.LIGHT_GRAY);
+            case 72 ->
+                jButtonH.setBackground(Color.LIGHT_GRAY);
+            case 74 ->
+                jButtonJ.setBackground(Color.LIGHT_GRAY);
+            case 75 ->
+                jButtonK.setBackground(Color.LIGHT_GRAY);
+            case 76 ->
+                jButtonL.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_DEAD_TILDE ->
+                jButtonTil.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_CLOSE_BRACKET ->
+                jButtonClose.setBackground(Color.LIGHT_GRAY);
+            case 90 ->
+                jButtonZ.setBackground(Color.LIGHT_GRAY);
+            case 88 ->
+                jButtonX.setBackground(Color.LIGHT_GRAY);
+            case 67 ->
+                jButtonC.setBackground(Color.LIGHT_GRAY);
+            case 86 ->
+                jButtonV.setBackground(Color.LIGHT_GRAY);
+            case 66 ->
+                jButtonB.setBackground(Color.LIGHT_GRAY);
+            case 78 ->
+                jButtonN.setBackground(Color.LIGHT_GRAY);
+            case 77 ->
+                jButtonM.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_COMMA ->
+                jButtonComma.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_PERIOD ->
+                jButtonPeriod.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_SEMICOLON ->
+                jButtonSemi.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_BACK_SPACE ->
+                jButtonBack.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_SPACE ->
+                jButtonSpace.setBackground(Color.LIGHT_GRAY);
+            case KeyEvent.VK_ENTER ->
+                jButtonEnter.setBackground(Color.LIGHT_GRAY);
         }
-        
-        switch(evt.getKeyCode()){
-            case KeyEvent.VK_SEMICOLON -> jButtonSemi.setBackground(Color.WHITE);
+
+        if (evt.getKeyChar() == 'ç') {
+            jButtonÇ.setBackground(Color.LIGHT_GRAY);
         }
-    }//GEN-LAST:event_jTextPangramaKeyPressed
+        if (evt.getKeyChar() == '/') {
+            jButtonRight.setBackground(Color.LIGHT_GRAY);
+        }
+    }//GEN-LAST:event_jTextFieldPangramaKeyReleased
 
     /**
      * @param args the command line arguments
@@ -956,7 +835,6 @@ public class Main extends javax.swing.JFrame {
     private int Pontuacao = 0;
     private javax.swing.JLabel jLabelResultado;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextPangrama;
+    private javax.swing.JTextField jTextFieldPangrama;
     // End of variables declaration//GEN-END:variables
 }
