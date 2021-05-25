@@ -26,4 +26,5 @@ jobs:
       
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.2.0
+        repo_token:"one"
 
