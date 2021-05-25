@@ -27,7 +27,7 @@ jobs:
     - name: Automatic Releases
       uses: marvinpinto/action-automatic-releases@v1.2.0
       with: 
-        repo_token: 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
+        repo_token: "${{ secrets.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 }}"
         automatic_release_tag: "latest"
         title: "Melhor Escrita"
         files: |
