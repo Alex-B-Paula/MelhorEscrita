@@ -28,4 +28,5 @@ jobs:
       uses: marvinpinto/action-automatic-releases@v1.2.0
       with: 
         repo_token: "one"
+        automatic_release_tag: "latest"
 
